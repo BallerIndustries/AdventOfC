@@ -1,16 +1,2 @@
-
-
-void puzzle1();
-void puzzle2A();
-void puzzle2B();
-
-int main() {
-    //puzzle1();
-    puzzle2B();
-
-
-    return 0;
-}
-
-
-
+#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+#include "catch.hpp"

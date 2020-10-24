@@ -3,4 +3,4 @@ project(AdventOfC__)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(AdventOfC__ main.cpp puzzle1.cpp puzzle2.cpp)
+add_executable(AdventOfC__ main.cpp puzzle1.cpp puzzle2.cpp catch.hpp catch.cpp)

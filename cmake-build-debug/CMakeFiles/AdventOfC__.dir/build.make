@@ -89,34 +89,64 @@ CMakeFiles/AdventOfC__.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdventOfC__.dir/main.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\CLionProjects\AdventOfC++\main.cpp -o CMakeFiles\AdventOfC__.dir\main.cpp.s
 
-CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj: CMakeFiles/AdventOfC__.dir/flags.make
-CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj: ../puzzle-1-test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\CLionProjects\AdventOfC++\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AdventOfC__.dir\puzzle-1-test.cpp.obj -c C:\Users\User\CLionProjects\AdventOfC++\puzzle-1-test.cpp
+CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj: CMakeFiles/AdventOfC__.dir/flags.make
+CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj: ../puzzle1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\CLionProjects\AdventOfC++\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AdventOfC__.dir\puzzle1.cpp.obj -c C:\Users\User\CLionProjects\AdventOfC++\puzzle1.cpp
 
-CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\CLionProjects\AdventOfC++\puzzle-1-test.cpp > CMakeFiles\AdventOfC__.dir\puzzle-1-test.cpp.i
+CMakeFiles/AdventOfC__.dir/puzzle1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdventOfC__.dir/puzzle1.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\CLionProjects\AdventOfC++\puzzle1.cpp > CMakeFiles\AdventOfC__.dir\puzzle1.cpp.i
 
-CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\CLionProjects\AdventOfC++\puzzle-1-test.cpp -o CMakeFiles\AdventOfC__.dir\puzzle-1-test.cpp.s
+CMakeFiles/AdventOfC__.dir/puzzle1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdventOfC__.dir/puzzle1.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\CLionProjects\AdventOfC++\puzzle1.cpp -o CMakeFiles\AdventOfC__.dir\puzzle1.cpp.s
+
+CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj: CMakeFiles/AdventOfC__.dir/flags.make
+CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj: ../puzzle2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\CLionProjects\AdventOfC++\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AdventOfC__.dir\puzzle2.cpp.obj -c C:\Users\User\CLionProjects\AdventOfC++\puzzle2.cpp
+
+CMakeFiles/AdventOfC__.dir/puzzle2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdventOfC__.dir/puzzle2.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\CLionProjects\AdventOfC++\puzzle2.cpp > CMakeFiles\AdventOfC__.dir\puzzle2.cpp.i
+
+CMakeFiles/AdventOfC__.dir/puzzle2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdventOfC__.dir/puzzle2.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\CLionProjects\AdventOfC++\puzzle2.cpp -o CMakeFiles\AdventOfC__.dir\puzzle2.cpp.s
+
+CMakeFiles/AdventOfC__.dir/catch.cpp.obj: CMakeFiles/AdventOfC__.dir/flags.make
+CMakeFiles/AdventOfC__.dir/catch.cpp.obj: ../catch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\CLionProjects\AdventOfC++\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AdventOfC__.dir/catch.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AdventOfC__.dir\catch.cpp.obj -c C:\Users\User\CLionProjects\AdventOfC++\catch.cpp
+
+CMakeFiles/AdventOfC__.dir/catch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdventOfC__.dir/catch.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\CLionProjects\AdventOfC++\catch.cpp > CMakeFiles\AdventOfC__.dir\catch.cpp.i
+
+CMakeFiles/AdventOfC__.dir/catch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdventOfC__.dir/catch.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\CLionProjects\AdventOfC++\catch.cpp -o CMakeFiles\AdventOfC__.dir\catch.cpp.s
 
 # Object files for target AdventOfC__
 AdventOfC___OBJECTS = \
 "CMakeFiles/AdventOfC__.dir/main.cpp.obj" \
-"CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj"
+"CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj" \
+"CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj" \
+"CMakeFiles/AdventOfC__.dir/catch.cpp.obj"
 
 # External object files for target AdventOfC__
 AdventOfC___EXTERNAL_OBJECTS =
 
 AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/main.cpp.obj
-AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj
+AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj
+AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj
+AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/catch.cpp.obj
 AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/build.make
 AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/linklibs.rsp
 AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/objects1.rsp
 AdventOfC__.exe: CMakeFiles/AdventOfC__.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\CLionProjects\AdventOfC++\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable AdventOfC__.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\CLionProjects\AdventOfC++\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable AdventOfC__.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AdventOfC__.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

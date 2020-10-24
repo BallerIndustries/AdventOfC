@@ -80,10 +80,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/catch.cpp">
+			<Option target="AdventOfC__"/>
+		</Unit>
+		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/catch.hpp">
+			<Option target="AdventOfC__"/>
+		</Unit>
 		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/main.cpp">
 			<Option target="AdventOfC__"/>
 		</Unit>
-		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/puzzle-1-test.cpp">
+		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/puzzle1.cpp">
+			<Option target="AdventOfC__"/>
+		</Unit>
+		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/puzzle2.cpp">
 			<Option target="AdventOfC__"/>
 		</Unit>
 		<Unit filename="C:/Users/User/CLionProjects/AdventOfC++/CMakeLists.txt">

@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/User/CLionProjects/AdventOfC++/catch.cpp" "C:/Users/User/CLionProjects/AdventOfC++/cmake-build-debug/CMakeFiles/AdventOfC__.dir/catch.cpp.obj"
   "C:/Users/User/CLionProjects/AdventOfC++/main.cpp" "C:/Users/User/CLionProjects/AdventOfC++/cmake-build-debug/CMakeFiles/AdventOfC__.dir/main.cpp.obj"
-  "C:/Users/User/CLionProjects/AdventOfC++/puzzle-1-test.cpp" "C:/Users/User/CLionProjects/AdventOfC++/cmake-build-debug/CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj"
+  "C:/Users/User/CLionProjects/AdventOfC++/puzzle1.cpp" "C:/Users/User/CLionProjects/AdventOfC++/cmake-build-debug/CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj"
+  "C:/Users/User/CLionProjects/AdventOfC++/puzzle2.cpp" "C:/Users/User/CLionProjects/AdventOfC++/cmake-build-debug/CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include "catch.hpp"
 
 //
 // Created by User on 18/10/2020.
@@ -8,7 +9,7 @@ int min(int a, int b);
 int wrapperPaper(int length, int width, int height);
 int ribbonLength(long length, long width, long height);
 
-void puzzle2A() {
+int puzzle2A() {
     FILE *file = fopen("../puzzles/2015/puzzle2.txt", "r");
 
     if (file == nullptr) {
@@ -25,10 +26,10 @@ void puzzle2A() {
         total += wrapperPaper(length, width, height);
     }
 
-    printf("total = %ld", total);
+    return total;
 }
 
-void puzzle2B() {
+long puzzle2B() {
     FILE *file = fopen("../puzzles/2015/puzzle2.txt", "r");
 
     if (file == nullptr) {
@@ -45,7 +46,7 @@ void puzzle2B() {
         total += ribbonLength(length, width, height);
     }
 
-    printf("total = %ld", total);
+    return total;
 }
 
 int wrapperPaper(int length, int width, int height) {
@@ -83,4 +84,12 @@ int min(int a, int b) {
     else {
         return b;
     }
+}
+
+TEST_CASE( "Puzzle 2A", "[dunno]" ) {
+    REQUIRE( puzzle2A() == 1606483 );
+}
+
+TEST_CASE( "Puzzle 2B", "[dunno]" ) {
+    REQUIRE( puzzle2B() == 3842356 );
 }

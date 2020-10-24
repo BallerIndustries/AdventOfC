@@ -142,6 +142,33 @@ AdventOfC__/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/build
 .PHONY : AdventOfC__/fast
 
+catch.obj: catch.cpp.obj
+
+.PHONY : catch.obj
+
+# target to build an object file
+catch.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/catch.cpp.obj
+.PHONY : catch.cpp.obj
+
+catch.i: catch.cpp.i
+
+.PHONY : catch.i
+
+# target to preprocess a source file
+catch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/catch.cpp.i
+.PHONY : catch.cpp.i
+
+catch.s: catch.cpp.s
+
+.PHONY : catch.s
+
+# target to generate assembly for a file
+catch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/catch.cpp.s
+.PHONY : catch.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -169,32 +196,59 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-puzzle-1-test.obj: puzzle-1-test.cpp.obj
+puzzle1.obj: puzzle1.cpp.obj
 
-.PHONY : puzzle-1-test.obj
+.PHONY : puzzle1.obj
 
 # target to build an object file
-puzzle-1-test.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.obj
-.PHONY : puzzle-1-test.cpp.obj
+puzzle1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle1.cpp.obj
+.PHONY : puzzle1.cpp.obj
 
-puzzle-1-test.i: puzzle-1-test.cpp.i
+puzzle1.i: puzzle1.cpp.i
 
-.PHONY : puzzle-1-test.i
+.PHONY : puzzle1.i
 
 # target to preprocess a source file
-puzzle-1-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.i
-.PHONY : puzzle-1-test.cpp.i
+puzzle1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle1.cpp.i
+.PHONY : puzzle1.cpp.i
 
-puzzle-1-test.s: puzzle-1-test.cpp.s
+puzzle1.s: puzzle1.cpp.s
 
-.PHONY : puzzle-1-test.s
+.PHONY : puzzle1.s
 
 # target to generate assembly for a file
-puzzle-1-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle-1-test.cpp.s
-.PHONY : puzzle-1-test.cpp.s
+puzzle1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle1.cpp.s
+.PHONY : puzzle1.cpp.s
+
+puzzle2.obj: puzzle2.cpp.obj
+
+.PHONY : puzzle2.obj
+
+# target to build an object file
+puzzle2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle2.cpp.obj
+.PHONY : puzzle2.cpp.obj
+
+puzzle2.i: puzzle2.cpp.i
+
+.PHONY : puzzle2.i
+
+# target to preprocess a source file
+puzzle2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle2.cpp.i
+.PHONY : puzzle2.cpp.i
+
+puzzle2.s: puzzle2.cpp.s
+
+.PHONY : puzzle2.s
+
+# target to generate assembly for a file
+puzzle2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AdventOfC__.dir\build.make CMakeFiles/AdventOfC__.dir/puzzle2.cpp.s
+.PHONY : puzzle2.cpp.s
 
 # Help Target
 help:
@@ -205,12 +259,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... AdventOfC__
+	@echo ... catch.obj
+	@echo ... catch.i
+	@echo ... catch.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... puzzle-1-test.obj
-	@echo ... puzzle-1-test.i
-	@echo ... puzzle-1-test.s
+	@echo ... puzzle1.obj
+	@echo ... puzzle1.i
+	@echo ... puzzle1.s
+	@echo ... puzzle2.obj
+	@echo ... puzzle2.i
+	@echo ... puzzle2.s
 .PHONY : help
 
 
