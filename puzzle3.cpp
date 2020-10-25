@@ -18,23 +18,19 @@ bool listContains(Node *head, int x, int y);
 
 int listSize(Node *head);
 
-int puzzle3A() {
-    FILE *file = fopen("../puzzles/2015/puzzle3.txt", "r");
+char *readFile(const char *filename);
 
-    if (file == nullptr) {
-        printf("Could not open file");
-        exit(EXIT_FAILURE);
-    }
+int puzzle3A(const char *puzzleInput) {
+    //char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
 
     int x = 0;
     int y = 0;
-    int c;
+    char c;
 
     Node* head = createNode(0, 0);
-    printf("%p\n", head);
 
-    do {
-        c = fgetc(file);
+    for (int i = 0; i < strlen(puzzleInput); i++) {
+        c = puzzleInput[i];
 
         if (c == '>') {
             x++;
@@ -50,20 +46,33 @@ int puzzle3A() {
         }
         else {
             printf("Unexpected character c = %c", c);
-            //exit(EXIT_FAILURE);
+            exit(EXIT_FAILURE);
         }
 
         if (!listContains(head, x, y)) {
-            //printf("Added to list");
             Node* node = createNode(x, y);
             listAdd(head, node);
         }
+    }
 
-        //printf("(%d, %d)\n", x, y);
-    } while (c != EOF);
-
-    fclose(file);
     return listSize(head);
+}
+
+char *readFile(const char *filename) {
+    FILE *file = fopen(filename, "r");
+
+    if (file == nullptr) {
+        printf("Could not open file");
+        exit(EXIT_FAILURE);
+    }
+
+    fseek(file, 0L, SEEK_END);
+    size_t size = ftell(file);
+    rewind(file);
+    char* puzzleInput = (char*)malloc(size);
+    fgets(puzzleInput, size, file);
+    fclose(file);
+    return puzzleInput;
 }
 
 int listSize(Node *head) {
@@ -103,7 +112,16 @@ Node *createNode(int x, int y) {
 
 TEST_CASE( "Puzzle 3A", "[dunno]" ) {
     // 2914 too high
-    REQUIRE( puzzle3A() == 2914 );
+    char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
+    REQUIRE( puzzle3A(puzzleInput) == 2914 );
+}
+
+TEST_CASE( ">", "[dunno]" ) {
+    REQUIRE( puzzle3A(">") == 2);
+}
+
+TEST_CASE( "^v^v^v^v^v", "[dunno]" ) {
+    REQUIRE( puzzle3A("^v^v^v^v^v") == 2);
 }
 
 void listAdd(Node *head, Node *node) {
