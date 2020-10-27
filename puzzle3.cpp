@@ -12,45 +12,48 @@ struct Node {
     Node* next;
 };
 
+struct Point {
+    int x;
+    int y;
+};
+
 Node *createNode(int x, int y);
 void listAdd(Node *head, Node *node);
 bool listContains(Node *head, int x, int y);
+Point *createPoint(int x, int y);
 
 int listSize(Node *head);
 
 char *readFile(const char *filename);
 
+
+
 int puzzle3A(const char *puzzleInput) {
-    //char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
-
-    int x = 0;
-    int y = 0;
-    char c;
-
+    Point *currentPosition = createPoint(0, 0);
     Node* head = createNode(0, 0);
 
     for (int i = 0; i < strlen(puzzleInput); i++) {
-        c = puzzleInput[i];
+        char c = puzzleInput[i];
 
         if (c == '>') {
-            x++;
+            currentPosition->x++;
         }
         else if (c == '<') {
-            x--;
+            currentPosition->x--;
         }
         else if (c == '^') {
-            y++;
+            currentPosition->y++;
         }
         else if (c == 'v') {
-            y--;
+            currentPosition->y--;
         }
         else {
             printf("Unexpected character c = %c", c);
             exit(EXIT_FAILURE);
         }
 
-        if (!listContains(head, x, y)) {
-            Node* node = createNode(x, y);
+        if (!listContains(head, currentPosition->x, currentPosition->y)) {
+            Node* node = createNode(currentPosition->x, currentPosition->y);
             listAdd(head, node);
         }
     }
@@ -90,7 +93,7 @@ int listSize(Node *head) {
 bool listContains(Node *head, int x, int y) {
     Node* current = head;
 
-    while (current->next != nullptr) {
+    while (current != nullptr) {
         if (current->x == x && current->y == y) {
             return true;
         }
@@ -110,10 +113,17 @@ Node *createNode(int x, int y) {
     return head;
 }
 
+Point *createPoint(int x, int y) {
+    Point* point = (struct Point*)malloc(sizeof(struct Point));
+    point->x = x;
+    point->y = y;
+
+    return point;
+}
+
 TEST_CASE( "Puzzle 3A", "[dunno]" ) {
-    // 2914 too high
     char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
-    REQUIRE( puzzle3A(puzzleInput) == 2914 );
+    REQUIRE( puzzle3A(puzzleInput) == 2592 );
 }
 
 TEST_CASE( ">", "[dunno]" ) {
@@ -123,6 +133,16 @@ TEST_CASE( ">", "[dunno]" ) {
 TEST_CASE( "^v^v^v^v^v", "[dunno]" ) {
     REQUIRE( puzzle3A("^v^v^v^v^v") == 2);
 }
+
+TEST_CASE( "listContains() should return true when item is last", "[dunno]" ) {
+    Node *head = createNode(0, 0);
+    listAdd(head, createNode(0, 1));
+
+    REQUIRE(listContains(head, 0, 0) == true);
+    REQUIRE(listContains(head, 0, 1) == true);
+}
+
+
 
 void listAdd(Node *head, Node *node) {
     Node* current = head;
