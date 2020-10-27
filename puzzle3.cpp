@@ -123,7 +123,7 @@ bool listContains(Node *head, int x, int y) {
 }
 
 Node *createNode(int x, int y) {
-    Node *head = (struct Node*)malloc(sizeof(struct Node));
+    auto* head = (struct Node*)malloc(sizeof(struct Node));
     Point *point = createPoint(x, y);
 
     head->point = point;
@@ -132,7 +132,7 @@ Node *createNode(int x, int y) {
 }
 
 Point *createPoint(int x, int y) {
-    Point* point = (struct Point*)malloc(sizeof(struct Point));
+    auto* point = (struct Point*)malloc(sizeof(struct Point));
     point->x = x;
     point->y = y;
 
@@ -141,12 +141,12 @@ Point *createPoint(int x, int y) {
 
 TEST_CASE( "Puzzle 3A", "[dunno]" ) {
     char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
-    REQUIRE( puzzle3A(puzzleInput) == 2592 );
+    REQUIRE( puzzle3A(puzzleInput) == 2565 );
 }
 
 TEST_CASE( "Puzzle 3B", "[dunno]" ) {
     char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
-    REQUIRE( puzzle3B(puzzleInput) == 2360 );
+    REQUIRE( puzzle3B(puzzleInput) == 2639 );
 }
 
 TEST_CASE( ">", "[dunno]" ) {
