@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include "catch.hpp"
+#include "utils/file-io.h"
 
 //
 // Created by User on 18/10/2020.
@@ -21,7 +22,6 @@ Point *createPoint(int x, int y);
 void listAdd(Node *head, Node *node);
 bool listContains(Node *head, int x, int y);
 int listSize(Node *head);
-char *readFile(const char *filename);
 
 void processCharacter(Point *position, char c);
 
@@ -78,23 +78,6 @@ int puzzle3A(const char *puzzleInput) {
     }
 
     return listSize(head);
-}
-
-char *readFile(const char *filename) {
-    FILE *file = fopen(filename, "r");
-
-    if (file == nullptr) {
-        printf("Could not open file");
-        exit(EXIT_FAILURE);
-    }
-
-    fseek(file, 0L, SEEK_END);
-    size_t size = ftell(file);
-    rewind(file);
-    char* puzzleInput = (char*)malloc(size);
-    fgets(puzzleInput, size, file);
-    fclose(file);
-    return puzzleInput;
 }
 
 int listSize(Node *head) {
