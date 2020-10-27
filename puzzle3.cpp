@@ -6,27 +6,24 @@
 // Created by User on 18/10/2020.
 //
 
-struct Node {
-    int x;
-    int y;
-    Node* next;
-};
-
 struct Point {
     int x;
     int y;
 };
 
+struct Node {
+    Point* point;
+    Node* next;
+};
+
+
+
 Node *createNode(int x, int y);
+Point *createPoint(int x, int y);
 void listAdd(Node *head, Node *node);
 bool listContains(Node *head, int x, int y);
-Point *createPoint(int x, int y);
-
 int listSize(Node *head);
-
 char *readFile(const char *filename);
-
-
 
 int puzzle3A(const char *puzzleInput) {
     Point *currentPosition = createPoint(0, 0);
@@ -89,12 +86,11 @@ int listSize(Node *head) {
     return size;
 }
 
-
 bool listContains(Node *head, int x, int y) {
     Node* current = head;
 
     while (current != nullptr) {
-        if (current->x == x && current->y == y) {
+        if (current->point->x == x && current->point->y == y) {
             return true;
         }
 
@@ -105,11 +101,11 @@ bool listContains(Node *head, int x, int y) {
 }
 
 Node *createNode(int x, int y) {
-    Node* head = (struct Node*)malloc(sizeof(struct Node));
-    head->x = x;
-    head->y = y;
-    head->next = nullptr;
+    Node *head = (struct Node*)malloc(sizeof(struct Node));
+    Point *point = createPoint(x, y);
 
+    head->point = point;
+    head->next = nullptr;
     return head;
 }
 
@@ -141,8 +137,6 @@ TEST_CASE( "listContains() should return true when item is last", "[dunno]" ) {
     REQUIRE(listContains(head, 0, 0) == true);
     REQUIRE(listContains(head, 0, 1) == true);
 }
-
-
 
 void listAdd(Node *head, Node *node) {
     Node* current = head;
