@@ -16,8 +16,6 @@ struct Node {
     Node* next;
 };
 
-
-
 Node *createNode(int x, int y);
 Point *createPoint(int x, int y);
 void listAdd(Node *head, Node *node);
@@ -25,29 +23,53 @@ bool listContains(Node *head, int x, int y);
 int listSize(Node *head);
 char *readFile(const char *filename);
 
+void processCharacter(Point *position, char c);
+
+int puzzle3B(const char *puzzleInput) {
+    Point *santa = createPoint(0, 0);
+    Point *robotSanta = createPoint(0, 0);
+    Node* head = createNode(0, 0);
+
+    for (int i = 0; i < strlen(puzzleInput); i++) {
+        char c = puzzleInput[i];
+        Point* activeSanta = i % 2 == 0 ? santa : robotSanta;
+        processCharacter(activeSanta, c);
+
+        if (!listContains(head, activeSanta->x, activeSanta->y)) {
+            Node* node = createNode(activeSanta->x, activeSanta->y);
+            listAdd(head, node);
+        }
+    }
+
+    return listSize(head);
+}
+
+void processCharacter(Point *position, char c) {
+    if (c == '>') {
+        position->x++;
+    }
+    else if (c == '<') {
+        position->x--;
+    }
+    else if (c == '^') {
+        position->y++;
+    }
+    else if (c == 'v') {
+        position->y--;
+    }
+    else {
+        printf("Unexpected character c = %c", c);
+        exit(EXIT_FAILURE);
+    }
+}
+
 int puzzle3A(const char *puzzleInput) {
     Point *currentPosition = createPoint(0, 0);
     Node* head = createNode(0, 0);
 
     for (int i = 0; i < strlen(puzzleInput); i++) {
         char c = puzzleInput[i];
-
-        if (c == '>') {
-            currentPosition->x++;
-        }
-        else if (c == '<') {
-            currentPosition->x--;
-        }
-        else if (c == '^') {
-            currentPosition->y++;
-        }
-        else if (c == 'v') {
-            currentPosition->y--;
-        }
-        else {
-            printf("Unexpected character c = %c", c);
-            exit(EXIT_FAILURE);
-        }
+        processCharacter(currentPosition, c);
 
         if (!listContains(head, currentPosition->x, currentPosition->y)) {
             Node* node = createNode(currentPosition->x, currentPosition->y);
@@ -120,6 +142,11 @@ Point *createPoint(int x, int y) {
 TEST_CASE( "Puzzle 3A", "[dunno]" ) {
     char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
     REQUIRE( puzzle3A(puzzleInput) == 2592 );
+}
+
+TEST_CASE( "Puzzle 3B", "[dunno]" ) {
+    char *puzzleInput = readFile("../puzzles/2015/puzzle3.txt");
+    REQUIRE( puzzle3B(puzzleInput) == 2360 );
 }
 
 TEST_CASE( ">", "[dunno]" ) {
