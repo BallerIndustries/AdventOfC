@@ -1,5 +1,6 @@
 #include "catch.hpp"
 #include "utils/file-io.h"
+#include "utils/md5.h"
 
 //
 // Created by User on 18/10/2020.
