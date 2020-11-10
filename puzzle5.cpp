@@ -6,6 +6,45 @@
 // Created by User on 18/10/2020.
 //
 
+bool appearsAfterIndex(const char* line, int index, char previous, char current) {
+    for (int i = index + 2; i < strlen(line); i++) {
+        char newPrevious = line[i-1];
+        char newCurrent = line[i];
+
+        if (newPrevious == previous && newCurrent == current) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool hasTwoRepeatingLetters(const char *line) {
+    for (int i = 1; i < strlen(line); i++) {
+        char previous = line[i-1];
+        char current = line[i];
+
+        if (appearsAfterIndex(line, i, previous, current)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool hasXYXPattern(const char *line) {
+    for (int i = 2; i < strlen(line); i++) {
+        char first = line[i-2];
+        char third = line[i];
+
+        if (first == third) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 bool hasAtLeastThreeVowels(const char *line) {
     int vowelCount = 0;
 
@@ -78,8 +117,25 @@ int puzzle5A(char *puzzleInput) {
     return niceStringCount;
 }
 
-int puzzle5B(const char *puzzleInput) {
-    return 1;
+int puzzle5B(char *puzzleInput) {
+    int result;
+    int niceStringCount = 0;
+    char *initial = puzzleInput;
+    char *line = puzzleInput;
+
+    do {
+        result = sscanf(puzzleInput, "%s\r\n", line);
+        size_t length = strlen(line);
+
+        if (hasTwoRepeatingLetters(line) && hasXYXPattern(line)) {
+            niceStringCount = niceStringCount + 1;
+        }
+
+        puzzleInput = puzzleInput + length + 2;
+    } while (result > 0);
+
+    free(initial);
+    return niceStringCount;
 }
 
 TEST_CASE( "Puzzle 5A", "[dunno]" ) {
@@ -90,5 +146,5 @@ TEST_CASE( "Puzzle 5A", "[dunno]" ) {
 
 TEST_CASE( "Puzzle 5B", "[dunno]" ) {
     char *puzzleInput = readFile("../puzzles/2015/puzzle5.txt");
-    REQUIRE( puzzle5B(puzzleInput) == 2639 );
+    REQUIRE( puzzle5B(puzzleInput) == 53 );
 }
