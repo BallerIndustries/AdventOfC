@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <cstdlib>
 
+char **readFileIntoArray(const char *filename);
 char *readFile(const char *filename);
 
 #endif //ADVENTOFC___FILE_IO_H
