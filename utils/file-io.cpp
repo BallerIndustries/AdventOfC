@@ -68,3 +68,52 @@ char *readFile(const char *filename) {
     fclose(file);
     return puzzleInput;
 }
+
+char **split(const char *pattern, char *text) {
+    int matchCount = 0;
+    size_t patternLength = strlen(pattern);
+
+    for (int i = 0; i + patternLength < strlen(text); i++) {
+        // Move the buffer along
+        char *buffer = text + i;
+
+        // Look for a pattern match
+        if (memcmp(buffer, pattern, patternLength) == 0) {
+            matchCount++;
+        }
+    }
+
+    char** result = (char **)malloc(matchCount);
+
+    if (matchCount == 0) {
+        return result;
+    }
+
+    matchCount = 0;
+    int lastMatch = 0;
+
+    for (int i = 0; i + patternLength < strlen(text); i++) {
+        // Move the buffer along
+        char *buffer = text + i;
+
+        if (memcmp(buffer, pattern, patternLength) == 0) {
+            int stringLength = i - lastMatch + 1;
+            result[matchCount] = (char *)malloc(stringLength);
+            memcpy(result[matchCount], text + lastMatch, i - lastMatch);
+            result[matchCount][stringLength-1] = 0;
+            matchCount++;
+            lastMatch = i + patternLength;
+        }
+    }
+
+    // Copy the last bit
+    int stringLength = strlen(text) - lastMatch + 1;
+    result[matchCount] = (char *)malloc(stringLength);
+    memcpy(result[matchCount], text + lastMatch, strlen(text) - lastMatch);
+    result[matchCount][stringLength-1] = 0;
+
+    printf("result[0] = %s\n", result[0]);
+    printf("result[1] = %s\n", result[1]);
+    printf("result[2] = %s\n", result[2]);
+    return result;
+}

@@ -10,5 +10,6 @@
 
 char **readFileIntoArray(const char *filename);
 char *readFile(const char *filename);
+char **split(const char *pattern, char *text);
 
 #endif //ADVENTOFC___FILE_IO_H
