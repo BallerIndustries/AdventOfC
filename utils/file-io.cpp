@@ -69,7 +69,7 @@ char *readFile(const char *filename) {
     return puzzleInput;
 }
 
-char **split(const char *pattern, char *text) {
+char **split(const char *pattern, char *text, int *__matchCount) {
     int matchCount = 0;
     size_t patternLength = strlen(pattern);
 
@@ -115,5 +115,9 @@ char **split(const char *pattern, char *text) {
     printf("result[0] = %s\n", result[0]);
     printf("result[1] = %s\n", result[1]);
     printf("result[2] = %s\n", result[2]);
+
+    // Set the match count
+    *__matchCount = matchCount;
+    
     return result;
 }
